@@ -10,10 +10,10 @@ func isPrimeNumber(possiblePrime int) bool {
 }
 
 func findPrimeNumbers(channel chan int) {
-	for i := 2; ; /* infinite loop */ i++ {
-		// your code goes here
-
-		assert(i < 100) // i is afraid of heights
+	for i := 2; i < 100;  i++ {
+		if isPrimeNumber(i){
+			channel <- i
+		}
 	}
 }
 
